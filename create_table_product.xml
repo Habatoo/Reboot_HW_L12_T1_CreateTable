@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="Habatoo" id="1">
+        <sql>CREATE TYPE category AS ENUM ('COSMETICS', 'FOOD', 'CHEMICAL', 'TECHNIC')</sql>
+        <createTable tableName="Product">
+            <column name="id" type="UUID"/>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="description" type="VARCHAR(32)"/>
+            <column name="category" type="category"/>    
+            <column name="manufacture_Date_Time" type="TIMESTAMP"/>
+            <column name="manufacturer" type="VARCHAR(32)"/>
+            <column name="has_Expiry_Time" type="BOOLEAN"/>
+            <column name="stock" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
